@@ -1,0 +1,10 @@
+.container {
+    background-color: black;
+}
+
+.percentText {
+    font-family: var(--font-my-custom), sans-serif;
+    font-size: 80px;
+    margin-top: 74px;
+    color: var(--color-white);
+}
