@@ -1,0 +1,45 @@
+.accordion {
+    border-bottom: 1px #242424 solid;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.header {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    font-family: var(--font-inter);
+    font-size: 80px;
+    font-weight: 100;
+    line-height: 50px;
+}
+
+.titleOpened {
+    font-family: var(--font-great-vibes);
+    font-size: 120px;
+    color: #D00000;
+    font-weight: 400;
+}
+
+.icon {
+    color: #D00000;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    /*padding-top: 30px;*/
+}
+
+.contentOpened {
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 30px;
+}

@@ -1,0 +1,14 @@
+.services {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 150px;
+}
+
+.header {
+    font-family: var(--font-inter);
+    font-weight: 200;
+    font-size: 24px;
+    color: #D00000;
+    align-self: center;
+}

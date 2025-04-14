@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import style from './Masters.module.css';
 import Image from "next/image";

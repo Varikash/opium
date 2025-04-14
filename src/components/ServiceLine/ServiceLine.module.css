@@ -1,0 +1,36 @@
+.serviceLine {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-inter, sans-serif);
+    font-size: 40px;
+    font-weight: 200;
+    margin-bottom: 6px;
+}
+
+.serviceName {
+    white-space: nowrap;
+    padding-right: 10px;
+}
+
+.dots {
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    height: 1em; /* нужно, чтобы точки были на нужной вертикали */
+}
+
+.dots::before {
+    content: "....................................................................................................................................................................................................";
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    width: 100%;
+    pointer-events: none;
+    color: currentColor;
+}
+
+.servicePrice {
+    white-space: nowrap;
+    padding-left: 10px;
+}

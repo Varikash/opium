@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import style from './About.module.css'
 import { aboutText } from "@/constants/texts";
@@ -13,11 +15,12 @@ export default function About() {
                         width={229}
                         height={285}
                         alt="Founder"
+                        className={style.founderImage}
                     />
                 </div>
-               <div className={style.founderDetails}>
+                <div className={style.founderDetails}>
                    <p>{aboutText.ru.founder}</p>
-               </div>
+                </div>
             </div>
             <div className={style.team}>
                 <Image
