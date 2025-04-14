@@ -110,3 +110,86 @@
     font-weight: 200;
     color: #999;
 }
+
+
+@media screen and (max-width: 1730px) {
+    .text {
+        font-size: 59px
+    }
+
+    .decor {
+        font-size: 105px;
+    }
+}
+
+@media screen and (max-width: 1632px) {
+    .text {
+        line-height: 50px;
+    }
+
+    .decor {
+        font-size: 70px;
+    }
+
+    .card {
+        width: 300px;
+        height: 432px;
+    }
+}
+
+
+@media screen and (max-width: 1310px) {
+    .card {
+        width: 275px;
+        height: 397px;
+    }
+}
+
+
+@media screen and (max-width: 1256px) {
+    .text {
+        align-self: center;
+        text-align: center;
+    }
+
+    .swiper {
+        width: calc(100% - 50px); /* смещаем контейнер */
+        transform: translateX(150px); /* сдвиг вправо, подберите значение */
+        height: auto;
+    }
+
+    .cardSlide {
+        width: 300px;
+        transition: opacity 0.3s ease;
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .swiper {
+        width: 100%;
+        transform: translateX(10px);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header {
+        font-size: 14px;
+    }
+
+    .text {
+        font-size: 30px;
+        line-height: 37px;
+    }
+
+    .decor {
+        font-size: 58px;
+    }
+
+}
+
+@media screen and (max-width: 380px) {
+    .cardSlide {
+        width: 280px;
+    }
+}
