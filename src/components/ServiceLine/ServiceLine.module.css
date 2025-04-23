@@ -34,3 +34,22 @@
     white-space: nowrap;
     padding-left: 10px;
 }
+
+
+@media screen and (max-width: 1430px) {
+    .serviceLine {
+        font-size: 33px
+    }
+}
+
+@media screen and (max-width: 1115px) {
+    .serviceLine {
+        font-size: 20px
+    }
+}
+
+@media screen and (max-width: 503px) {
+    .serviceLine {
+        font-size: 14px
+    }
+}

@@ -12,3 +12,15 @@
     color: #D00000;
     align-self: center;
 }
+
+
+@media screen and (max-width: 500px) {
+
+    .services {
+        padding-top: 60px;
+    }
+
+    .header {
+        font-size: 14px;
+    }
+}

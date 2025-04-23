@@ -27,8 +27,9 @@ export default function Hair() {
                     src={'/images/hair.webp'}
                     width={275}
                     height={205}
+                    className={style.image}
                 />
-                <p>{aboutText.ru.section.services.accordion_4.description}</p>
+                <p className={style.description}>{aboutText.ru.section.services.accordion_4.description}</p>
                 <p className={style.note}>Все цены указаны в леях.</p>
             </div>
             <div className={style.price}>

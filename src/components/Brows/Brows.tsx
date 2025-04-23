@@ -27,8 +27,9 @@ export default function Brows() {
                     src={'/images/brows.webp'}
                     width={265}
                     height={225}
+                    className={style.image}
                 />
-                <p>{aboutText.ru.section.services.accordion_2.description}</p>
+                <p className={style.description}>{aboutText.ru.section.services.accordion_2.description}</p>
                 <p className={style.note}>Все цены указаны в леях.</p>
             </div>
             <div className={style.price}>

@@ -62,15 +62,6 @@ export default function GalleryCarousel() {
                 navigation={{
                     nextEl: '.swiper-button-next',
                 }}
-                // onInit={(swiper) => {
-                //     // Обновляем навигацию после инициализации
-                //     swiper.params.navigation = {
-                //         ...(swiper.params.navigation as Record<string, any>),
-                //         nextEl: nextBtnRef.current
-                //     };
-                //     swiper.navigation.init();
-                //     swiper.navigation.update();
-                // }}
                 onInit={(swiper: SwiperType) => {
                     // Используем безопасный подход без spread-оператора
                     const currentNav = (swiper.params.navigation || {}) as Partial<NavigationOptions>;

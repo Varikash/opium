@@ -11,6 +11,7 @@ import Image from "next/image";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 
 

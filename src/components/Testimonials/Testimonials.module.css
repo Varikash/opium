@@ -43,6 +43,10 @@
     column-gap: 90px;
 }
 
+.swiper-pagination {
+    display: none !important;
+}
+
 .arrows {
     display: flex;
     justify-content: flex-end;
@@ -99,15 +103,6 @@
     z-index: 1;
 }
 
-/*.testimonialWrapper {*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    background: rgba(141, 0, 0, 0.6);*/
-/*}*/
-
 .userInfo {
     display: flex;
     align-items: center;
@@ -132,4 +127,84 @@
     font-size: 20px;
     font-weight: 200;
     color: #fff;
+}
+
+.mySwiperWrapper :global(.swiper-pagination) {
+    display: none !important;
+}
+
+@media screen and (max-width: 1633px) {
+    .title {
+        font-size: 80px;
+    }
+}
+
+
+@media screen and (max-width: 1435px) {
+    .title {
+        font-size: 60px;
+    }
+
+    .decor {
+        font-size: 175px;
+    }
+
+    .header {
+        line-height: 95px;
+    }
+}
+
+@media screen and (max-width: 1135px) {
+    .title {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 1135px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        line-height: 75px;
+    }
+
+    .sectionName {
+        font-size: 24px;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .decor {
+        font-size: 100px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .title {
+        font-size: 35px;
+    }
+
+    .header {
+        line-height: 52px;
+        row-gap: 20px;
+    }
+
+    .arrows {
+        display: none;
+    }
+
+    .swiper-pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .testimonialCard {
+        height: 480px;
+    }
+
+    .testimonialSlide {
+        width: 275px;
+    }
 }

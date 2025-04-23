@@ -81,8 +81,6 @@
     font-weight: 100;
 }
 
-
-
 .customNextBtn {
     position: absolute;
     right: 40px;
@@ -104,5 +102,19 @@
 
 .customNextBtn:hover {
     color: rgba(255, 255, 255, 0.8);
+}
+
+
+@media (max-width: 700px) {
+    .title{
+        font-size: 50px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .title{
+        font-size: 25px;
+    }
 }
 

@@ -43,3 +43,33 @@
     overflow: hidden;
     padding-top: 30px;
 }
+
+@media (max-width: 1430px) {
+    .title {
+        font-size: 60px;
+    }
+
+    .titleOpened {
+        font-size: 90px;
+    }
+
+    .icon {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 833px) {
+    .accordion {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+
+    .title {
+        font-size: 30px;
+    }
+
+    .titleOpened {
+        font-size: 46px;
+    }
+}

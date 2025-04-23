@@ -25,3 +25,65 @@
     color: #b6b6b6;
     justify-self: flex-end;
 }
+
+@media screen and (max-width: 1430px) {
+    .container {
+        column-gap: 100px;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .container {
+        column-gap: 50px;
+    }
+}
+
+@media screen and (max-width: 1115px) {
+    .about {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 833px) {
+    .container {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .price {
+        order: 1;
+    }
+
+    .about {
+        order: 2;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+    }
+
+    .note {
+        grid-column: 1 / -1;
+    }
+
+    .image {
+        width: 200px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 503px) {
+    .about {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .image {
+        display: none;
+    }
+
+    .description {
+        display: none;
+    }
+}
