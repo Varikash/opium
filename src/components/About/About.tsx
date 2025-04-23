@@ -32,7 +32,7 @@ export default function About() {
                 />
                 <h2 className={style.header}>{aboutText.ru.header}</h2>
                 <p className={style.teamText}>
-                   Место, где <span className={`${style.decor}`}>Красота</span> становится искусством, а уход за любимой собой превращается в <span className={`${style.decor} ${style.decorRed}`}>Настоящее Удовольствие</span>.
+                   Место, где <span className={`${style.decor}`}>Красота</span> становится искусством, а уход за любимой собой превращается в <span className={`${style.decor} ${style.decorRed}`}>Настоящее Удовольствие</span>
                 </p>
             </div>
         </section>

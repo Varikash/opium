@@ -9,7 +9,7 @@
     padding: 100px 40px 0px 40px;
     display: flex;
     justify-content: space-between;
-    line-height: 120px;
+    line-height: 80px;
 }
 
 .sectionName {
@@ -30,8 +30,8 @@
 
 
 .decor {
-    font-family: var(--font-my-custom), sans-serif;
-    font-size: 250px;
+    font-family: var(--font-great-vibes), sans-serif;
+    font-size: 120px;
 }
 
 
@@ -137,6 +137,7 @@
     .title {
         font-size: 80px;
     }
+
 }
 
 
@@ -145,12 +146,8 @@
         font-size: 60px;
     }
 
-    .decor {
-        font-size: 175px;
-    }
-
     .header {
-        line-height: 95px;
+        line-height: 70px;
     }
 }
 
@@ -158,13 +155,14 @@
     .title {
         font-size: 50px;
     }
+
 }
 
 @media screen and (max-width: 1135px) {
     .header {
         flex-direction: column;
         align-items: center;
-        line-height: 75px;
+        line-height: 65px;
     }
 
     .sectionName {
@@ -206,5 +204,9 @@
 
     .testimonialSlide {
         width: 275px;
+    }
+
+    .decor {
+        font-size: 62px;
     }
 }

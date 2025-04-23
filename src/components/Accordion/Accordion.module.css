@@ -4,6 +4,10 @@
     padding-top: 50px;
 }
 
+.mobileOnly {
+    display: none;
+}
+
 .header {
     cursor: pointer;
     display: flex;
@@ -71,5 +75,13 @@
 
     .titleOpened {
         font-size: 46px;
+    }
+
+    .desktopOnly {
+        display: none;
+    }
+
+    .mobileOnly {
+        display: block;
     }
 }

@@ -7,7 +7,7 @@
 }
 
 .title {
-    font-family: var(--font-my-custom), sans-serif;
+    font-family: var(--font-great-vibes), sans-serif;
     color: #8D0000;
     font-size: 250px;
     font-weight: 100;
@@ -144,6 +144,12 @@
     }
 }
 
+@media screen and (max-width: 1175px) {
+    .title {
+        margin-left: 6%;
+    }
+}
+
 
 @media screen and (max-width: 1015px) {
     .contacts {
@@ -157,16 +163,19 @@
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 978px) {
     .title {
-        margin-left: 6%;
+        font-size: 175px;
+    }
+}
+
+@media screen and (max-width: 695px) {
+    .title {
+      font-size: 136px;
     }
 }
 
 @media screen and (max-width: 630px) {
-    .title {
-        font-size: 175px;
-    }
 
     .textInfo {
         font-size: 27px;
@@ -181,6 +190,12 @@
     }
 }
 
+@media screen and (max-width: 550px) {
+    .title {
+        font-size: 90px;
+    }
+}
+
 @media screen and (max-width: 500px) {
     .bottomContent {
         flex-direction: column;
@@ -189,10 +204,6 @@
 }
 
 @media screen and (max-width: 450px) {
-    .title {
-        font-size: 136px;
-    }
-
     .textInfo {
         font-size: 25px;
     }

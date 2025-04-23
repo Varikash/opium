@@ -1,6 +1,7 @@
 
 'use client';
 import React, { useRef, useEffect } from 'react';
+import Image from "next/image";
 import style from './Accordion.module.css';
 
 type AccordionProps = {
@@ -33,7 +34,8 @@ export default function Accordion({ title, children, isOpen, onToggle }: Accordi
         <div className={style.accordion}>
             <div className={style.header} onClick={onToggle}>
                 <h2 className={isOpen ? style.titleOpened : style.title}>{title}</h2>
-                <span className={style.icon}>{isOpen ? '—' : ''}</span>
+                <span className={style.desktopOnly}> <span className={style.icon}>{isOpen ? '—' : ''}</span> </span>
+                <span className={style.mobileOnly}> <span className={style.icon}>{isOpen ? '—' : <Image src={'/images/plus.png'} alt={'plus'} width={56} height={56}/>}</span> </span>
             </div>
             <div ref={contentRef} className={isOpen? style.contentOpened : style.content}>
                 {children}
