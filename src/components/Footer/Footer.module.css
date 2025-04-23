@@ -118,7 +118,78 @@
     color: #fff;
 }
 
-.buttomRights {
+.bottomRights {
     color: #565656;
     font-size: 16px;
+}
+
+
+@media screen and (max-width: 1615px) {
+    .contacts {
+        flex: 3;
+    }
+}
+
+@media screen and (max-width: 1445px) {
+    .contacts {
+        flex: 4;
+    }
+}
+
+
+@media screen and (max-width: 1250px) {
+    .container {
+        flex-direction: column;
+        row-gap: 60px;
+    }
+}
+
+
+@media screen and (max-width: 1015px) {
+    .contacts {
+        flex-direction: column;
+        row-gap: 60px;
+    }
+
+    .contact {
+        row-gap: 60px;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .title {
+        margin-left: 6%;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .title {
+        font-size: 175px;
+    }
+
+    .textInfo {
+        font-size: 27px;
+    }
+
+    .contacts {
+        row-gap: 36px;
+    }
+
+    .contact {
+        row-gap: 36px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .bottomContent {
+        flex-direction: column;
+        row-gap: 60px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .title {
+        font-size: 136px;
+    }
 }

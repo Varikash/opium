@@ -51,7 +51,7 @@ export default function Footer() {
                         <button className={style.button}>RU</button>
                     </div>
                     <div className={style.rights}>
-                        <span className={style.buttomRights}>© {new Date().getFullYear()} Opium – All rights reserved</span>
+                        <span className={style.bottomRights}>© {new Date().getFullYear()} Opium – All rights reserved</span>
                     </div>
                 </div>
             </div>
