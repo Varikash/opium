@@ -16,15 +16,21 @@
 }
 
 .founderPhoto {
-    padding: 10px;
+    padding: 5px;
     background-color: var(--color-white);
     max-height: 305px;
-    max-width: 249px;
+    max-width: 240px;
 }
 
 .founderDetails {
     font-size: 20px;
     color: #999;
+    max-width: 310px;
+}
+
+.founderName {
+    color: #242424;
+    font-size: 24px;
 }
 
 .team {
@@ -41,7 +47,7 @@
     float: left;
     margin-bottom: 0;
     margin-right: 15px;
-    padding: 10px;
+    padding: 5px;
     background-color: var(--color-white);
 
 }

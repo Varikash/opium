@@ -24,8 +24,8 @@ export default function Brows() {
             <div className={style.about}>
                 <Image
                     alt='makeup'
-                    src={'/images/brows.webp'}
-                    width={265}
+                    src={'/images/brows.jpg'}
+                    width={180}
                     height={225}
                     className={style.image}
                 />

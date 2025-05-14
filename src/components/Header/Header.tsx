@@ -27,7 +27,7 @@ export default function Header() {
     useEffect(() => {
 
         const handleResize = () => {
-            setIsSmallScreen(window.innerWidth <= 1256);
+            setIsSmallScreen(window.innerWidth <= 480);
         };
 
         handleResize();

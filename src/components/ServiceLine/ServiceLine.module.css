@@ -23,11 +23,12 @@
     content: "....................................................................................................................................................................................................";
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
     white-space: nowrap;
     width: 100%;
     pointer-events: none;
     color: currentColor;
+    font-size: 20px;
 }
 
 .servicePrice {

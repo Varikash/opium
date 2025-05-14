@@ -1,7 +1,8 @@
 export const aboutText = {
     ru: {
         header: "О салоне",
-        founder: "Цветана Курдова — вдохновитель и основатель салона красоты Opium, который стал для женщин местом душевного уюта. С 35-летним опытом в индустрии красоты и торговли, она и её команда дарят гармонию, заботу и уверенность в себе.",
+        founder_name: "Цветана Курдова",
+        founder: "вдохновитель и основатель салона красоты Opium, который стал для женщин местом душевного уюта. С 35-летним опытом в индустрии красоты и торговли, она и её команда дарят гармонию, заботу и уверенность в себе.",
         section: {
             masters: {
                 header: 'Мастера',
@@ -54,11 +55,11 @@ export const aboutText = {
                         { name: "Классический + покрытие лаком", price: "450" },
                         { name: "Лак-гель + маникюр", price: "500" },
                         { name: "Гель + маникюр", price: "600" },
-                        { name: "Дизайн / френч", price: "50 / 100" },
+                        { name: "Дизайн / френч", price: "50/100" },
                         { name: "Парафинотерапия рук", price: "200" },
                         { name: "Парафинотерапия ног", price: "250" },
                         { name: "Педикюр + SPA", price: "500" },
-                        { name: "Покрытие лаком (ноги)", price: "50 / 100" },
+                        { name: "Покрытие лаком (ноги)", price: "50/100" },
                         { name: "Педикюр гель / лак-гель", price: "600" },
                         { name: "Мужской маникюр", price: "500" },
                         { name: "Мужской педикюр", price: "700" },
@@ -68,14 +69,14 @@ export const aboutText = {
                     title: 'Волосы',
                     description: 'Стрижки, укладки и причёски для женщин и мужчин. Современные техники и индивидуальный подход к каждому.',
                     services: [
-                        { name: "Стрижка + укладка (короткие)", price: "350 / 400" },
-                        { name: "Стрижка + укладка (средние)", price: "500 / 550" },
-                        { name: "Стрижка + укладка (длинные)", price: "650 / 750" },
-                        { name: "Стрижка с укладкой (отдельно)", price: "300 / 600" },
+                        { name: "Стрижка + укладка (короткие)", price: "350/400" },
+                        { name: "Стрижка + укладка (средние)", price: "500/550" },
+                        { name: "Стрижка + укладка (длинные)", price: "650/750" },
+                        { name: "Стрижка с укладкой (отдельно)", price: "300/600" },
                         { name: "Чёлка", price: "150" },
-                        { name: "Причёска", price: "750 / 1500" },
-                        { name: "Свадебная причёска", price: "1600 / 2200" },
-                        { name: "Причёска пробная (50%)", price: "от 375" },
+                        { name: "Причёска", price: "750/1500" },
+                        { name: "Свадебная причёска", price: "1600/2200" },
+                        { name: "Причёска пробная (50%)", price: "от 2200" },
                         { name: "Мужская стрижка", price: "300" },
                     ]
                 },
@@ -83,8 +84,8 @@ export const aboutText = {
                     title: 'Уход',
                     description: 'Питательные и восстанавливающие процедуры для волос. Увлажнение, блеск и глубокое восстановление.',
                     services: [
-                        { name: "Уход Nashi Argan Filer Therapy", price: "750 / 850" },
-                        { name: "Keune Shining", price: "1000 / 1200" },
+                        { name: "Уход Nashi Argan Filer Therapy", price: "750/850" },
+                        { name: "Keune Shining", price: "1000/1200" },
                         { name: "CHI Royal Treatment", price: "от 1000" },
                         { name: "Keune Vital Nutrition SPA Creambath", price: "100" },
                     ]
@@ -101,7 +102,8 @@ export const aboutText = {
     },
     ro: {
         header: "Despre salon",
-        founder: "Țvetana Kurdova este inspirația și fondatoarea salonului de înfrumusețare Opium, care a devenit un loc de confort sufletesc pentru femei. Cu o experiență de 35 de ani în industria frumuseții și comerțului, ea și echipa sa oferă armonie, grijă și încredere în sine, creând o atmosferă în care fiecare femeie se simte unică.",
+        founder_name: "Țvetana Kurdova",
+        founder: "este inspirația și fondatoarea salonului de înfrumusețare Opium, care a devenit un loc de confort sufletesc pentru femei. Cu o experiență de 35 de ani în industria frumuseții și comerțului, ea și echipa sa oferă armonie, grijă și încredere în sine, creând o atmosferă în care fiecare femeie se simte unică.",
         section: {
             masters: {
                 header: 'Meșteri',
@@ -154,11 +156,11 @@ export const aboutText = {
                         { name: "Clasică + acoperire cu lac", price: "450" },
                         { name: "Lac-gel + manichiură", price: "500" },
                         { name: "Gel + manichiură", price: "600" },
-                        { name: "Design / french", price: "50 / 100" },
+                        { name: "Design / french", price: "50/100" },
                         { name: "Parafinterapie mâini", price: "200" },
                         { name: "Parafinterapie picioare", price: "250" },
                         { name: "Pedichiură + SPA", price: "500" },
-                        { name: "Acoperire cu lac (picioare)", price: "50 / 100" },
+                        { name: "Acoperire cu lac (picioare)", price: "50/100" },
                         { name: "Pedichiură gel / lac-gel", price: "600" },
                         { name: "Manichiură pentru bărbați", price: "500" },
                         { name: "Pedichiură pentru bărbați", price: "700" },
@@ -168,13 +170,13 @@ export const aboutText = {
                     title: 'Păr',
                     description: 'Tunsori, coafuri și stilizări pentru femei și bărbați. Tehnici moderne și abordare individuală pentru fiecare.',
                     services: [
-                        { name: "Tunsoare + coafare (scurt)", price: "350 / 400" },
-                        { name: "Tunsoare + coafare (mediu)", price: "500 / 550" },
-                        { name: "Tunsoare + coafare (lung)", price: "650 / 750" },
-                        { name: "Tunsoare cu coafare (separat)", price: "300 / 600" },
+                        { name: "Tunsoare + coafare (scurt)", price: "350/400" },
+                        { name: "Tunsoare + coafare (mediu)", price: "500/550" },
+                        { name: "Tunsoare + coafare (lung)", price: "650/750" },
+                        { name: "Tunsoare cu coafare (separat)", price: "300/600" },
                         { name: "Breton", price: "150" },
-                        { name: "Coafură", price: "750 / 1500" },
-                        { name: "Coafură de mireasă", price: "1600 / 2200" },
+                        { name: "Coafură", price: "750/1500" },
+                        { name: "Coafură de mireasă", price: "1600/2200" },
                         { name: "Coafură de probă (50%)", price: "de la 375" },
                         { name: "Tunsoare bărbătească", price: "300" },
                     ]
@@ -183,8 +185,8 @@ export const aboutText = {
                     title: 'Îngrijire',
                     description: 'Proceduri nutritive și regenerante pentru păr. Hidratare, strălucire și restaurare profundă.',
                     services: [
-                        { name: "Îngrijire Nashi Argan Filer Therapy", price: "750 / 850" },
-                        { name: "Keune Shining", price: "1000 / 1200" },
+                        { name: "Îngrijire Nashi Argan Filer Therapy", price: "750/850" },
+                        { name: "Keune Shining", price: "1000/1200" },
                         { name: "CHI Royal Treatment", price: "de la 1000" },
                         { name: "Keune Vital Nutrition SPA Creambath", price: "100" },
                     ]

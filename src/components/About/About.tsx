@@ -19,6 +19,7 @@ export default function About() {
                     />
                 </div>
                 <div className={style.founderDetails}>
+                    <p className={style.founderName}>{aboutText.ru.founder_name}</p>
                    <p>{aboutText.ru.founder}</p>
                 </div>
             </div>

@@ -15,10 +15,27 @@
     justify-content: space-between;
 }
 
+.header:hover .title {
+    font-family: var(--font-great-vibes);
+    font-size: 120px;
+    color: #D00000;
+    font-weight: 400;
+    transition-delay: 0.1s;
+}
+
+.header:hover .icon:empty::before {
+    content: '+';
+    display: inline-block;
+    font-size: 90px;
+    line-height: 1;
+    transition-delay: 0.15s;
+}
+
+
 .title {
     font-family: var(--font-inter);
     font-size: 80px;
-    font-weight: 100;
+    font-weight: 250;
     line-height: 50px;
 }
 
@@ -59,6 +76,10 @@
 
     .icon {
         font-size: 35px;
+    }
+
+    .header:hover .title {
+        font-size: 90px;
     }
 }
 

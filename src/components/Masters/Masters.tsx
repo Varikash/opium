@@ -144,7 +144,7 @@ export default function Masters() {
                             width={321}
                             height={460}
                             alt='Antonina'
-                            className={style.image}
+                            className={`${style.image}`}
                         />
                         <div className={style.overlay}>
                             <div className={style.line}></div>

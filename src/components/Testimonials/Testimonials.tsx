@@ -141,7 +141,7 @@ export default function Testimonials () {
                                 <div className={style.userInfo}>
                                     <div className={style.avatar}>
                                         <Image
-                                            src="/images/avatar1.jpg"
+                                            src="/images/avatar4.jpg"
                                             alt="Аватар Софии"
                                             width={42}
                                             height={42}
@@ -162,7 +162,7 @@ export default function Testimonials () {
                                 <div className={style.userInfo}>
                                     <div className={style.avatar}>
                                         <Image
-                                            src="/images/avatar2.jpg"
+                                            src="/images/avatar5.jpg"
                                             alt="Аватар Алины"
                                             width={42}
                                             height={42}
@@ -183,7 +183,7 @@ export default function Testimonials () {
                                 <div className={style.userInfo}>
                                     <div className={style.avatar}>
                                         <Image
-                                            src="/images/avatar3.jpg"
+                                            src="/images/avatar6.jpg"
                                             alt="Аватар Ирины"
                                             width={42}
                                             height={42}
@@ -204,7 +204,7 @@ export default function Testimonials () {
                                 <div className={style.userInfo}>
                                     <div className={style.avatar}>
                                         <Image
-                                            src="/images/avatar1.jpg"
+                                            src="/images/avatar7.jpg"
                                             alt="Аватар Екатерины"
                                             width={42}
                                             height={42}
@@ -225,7 +225,7 @@ export default function Testimonials () {
                                 <div className={style.userInfo}>
                                     <div className={style.avatar}>
                                         <Image
-                                            src="/images/avatar2.jpg"
+                                            src="/images/avatar8.jpg"
                                             alt="Аватар Юлии"
                                             width={42}
                                             height={42}
@@ -246,7 +246,7 @@ export default function Testimonials () {
                                 <div className={style.userInfo}>
                                     <div className={style.avatar}>
                                         <Image
-                                            src="/images/avatar3.jpg"
+                                            src="/images/avatar9.jpg"
                                             alt="Аватар Натальи"
                                             width={42}
                                             height={42}
@@ -267,7 +267,7 @@ export default function Testimonials () {
                                 <div className={style.userInfo}>
                                     <div className={style.avatar}>
                                         <Image
-                                            src="/images/avatar1.jpg"
+                                            src="/images/avatar10.jpg"
                                             alt="Аватар Ольги"
                                             width={42}
                                             height={42}
