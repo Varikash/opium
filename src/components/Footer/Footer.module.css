@@ -36,7 +36,7 @@
 
 .redTitle {
     font-size: 24px;
-    font-weight: 100;
+    font-weight: 200;
     color: #D00000;
     margin-bottom: 10px;
 }
@@ -44,7 +44,7 @@
 .textInfo {
     font-size: 40px;
     color: #b6b6b6;
-    font-weight: 100;
+    font-weight: 200;
 }
 
 .contacts {
@@ -101,7 +101,7 @@
     font-size: 16px;
     padding: 0;
     cursor: pointer;
-    font-weight: 100;
+    font-weight: 300;
     text-transform: uppercase;
     transition: color 0.3s ease;
 }

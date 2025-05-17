@@ -48,7 +48,7 @@ export default function Header() {
                     loop
                     playsInline
                 >
-                    <source src="/video/header.mp4" type="video/mp4" />
+                    <source src="/video/header.webm" type="video/mp4" />
                 </video>
                 <div className={style.layer}></div>
                 <nav className={style.navbar}>
