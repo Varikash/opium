@@ -29,6 +29,7 @@ export const aboutText = {
             },
             services: {
                 header: 'Услуги',
+                serviceText: "Все цены указаны в леях.",
                 accordion_1: {
                     title: 'Макияж',
                     description: 'Преобразите свой образ с помощью профессионального макияжа — от лёгкого дневного до выразительного вечернего и свадебного. Подчеркнём вашу естественную красоту и создадим идеальный лук для любого случая.',
@@ -130,6 +131,7 @@ export const aboutText = {
             },
             services: {
                 header: 'Servicii',
+                serviceText: "Toate prețurile sunt indicate în lei.",
                 accordion_1: {
                     title: 'Machiaj',
                     description: 'Transformă-ți imaginea cu ajutorul machiajului profesional - de la unul ușor de zi până la unul expresiv de seară și nuntă. Vom evidenția frumusețea ta naturală și vom crea un look ideal pentru orice ocazie.',

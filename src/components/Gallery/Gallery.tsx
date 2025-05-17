@@ -7,51 +7,71 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from "next/image";
-import {aboutText} from "@/constants/texts";
+import { aboutText } from "@/constants/texts";
 import type { Swiper as SwiperType } from 'swiper';
 import type { NavigationOptions } from 'swiper/types';
-
-const slides = [
-    {
-        image: '/images/slide1.jpg',
-        procedure: aboutText.ru.section.gallery.slide_one.procedure,
-        master: aboutText.ru.section.gallery.slide_one.master,
-    },
-    {
-        image: '/images/slide2.jpeg',
-        procedure: aboutText.ru.section.gallery.slide_two.procedure,
-        master: aboutText.ru.section.gallery.slide_two.master,
-    },
-    {
-        image: '/images/slide3.jpg',
-        procedure: aboutText.ru.section.gallery.slide_three.procedure,
-        master: aboutText.ru.section.gallery.slide_three.master,
-    },
-    {
-        image: '/images/slide4.jpg',
-        procedure: aboutText.ru.section.gallery.slide_four.procedure,
-        master: aboutText.ru.section.gallery.slide_four.master,
-    },
-    {
-        image: '/images/slide2.jpg',
-        procedure: aboutText.ru.section.gallery.slide_five.procedure,
-        master: aboutText.ru.section.gallery.slide_five.master,
-    },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function GalleryCarousel() {
     const nextBtnRef = React.useRef<HTMLButtonElement>(null);
+    const { language } = useLanguage();
+
+    // Тексты для разных языков
+    const galleryTexts = {
+        ru: {
+            galleryTitle: "Галерея",
+            procedureLabel: "Процедура",
+            masterLabel: "Мастер"
+        },
+        ro: {
+            galleryTitle: "Galerie",
+            procedureLabel: "Procedură",
+            masterLabel: "Specialist"
+        }
+    };
+
+    // Выбираем текст в зависимости от текущего языка
+    const text = galleryTexts[language];
+
+    // Динамически создаем массив слайдов в зависимости от текущего языка
+    const slides = [
+        {
+            image: '/images/slide1.jpg',
+            procedure: aboutText[language].section.gallery.slide_one.procedure,
+            master: aboutText[language].section.gallery.slide_one.master,
+        },
+        {
+            image: '/images/slide2.jpeg',
+            procedure: aboutText[language].section.gallery.slide_two.procedure,
+            master: aboutText[language].section.gallery.slide_two.master,
+        },
+        {
+            image: '/images/slide3.jpg',
+            procedure: aboutText[language].section.gallery.slide_three.procedure,
+            master: aboutText[language].section.gallery.slide_three.master,
+        },
+        {
+            image: '/images/slide4.jpg',
+            procedure: aboutText[language].section.gallery.slide_four.procedure,
+            master: aboutText[language].section.gallery.slide_four.master,
+        },
+        {
+            image: '/images/slide2.jpg',
+            procedure: aboutText[language].section.gallery.slide_five.procedure,
+            master: aboutText[language].section.gallery.slide_five.master,
+        },
+    ];
 
     return (
         <div className={style.carouselWrapper}>
             <div className={style.galleryOverlay}>
-                Галерея
+                {text.galleryTitle}
             </div>
 
             <button ref={nextBtnRef} className={style.customNextBtn}>
                 <Image
                     src="/images/arrow-right.svg"
-                    alt="Следующий слайд"
+                    alt={language === 'ru' ? "Следующий слайд" : "Slide următorul"}
                     width={73}
                     height={73}
                 />
@@ -63,7 +83,6 @@ export default function GalleryCarousel() {
                     nextEl: '.swiper-button-next',
                 }}
                 onInit={(swiper: SwiperType) => {
-                    // Используем безопасный подход без spread-оператора
                     const currentNav = (swiper.params.navigation || {}) as Partial<NavigationOptions>;
                     swiper.params.navigation = {
                         ...currentNav,
@@ -82,9 +101,9 @@ export default function GalleryCarousel() {
                             style={{ backgroundImage: `url(${slide.image})` }}
                         >
                             <div className={style.slideInfo}>
-                                <span className={style.procedure}>Процедура</span>
+                                <span className={style.procedure}>{text.procedureLabel}</span>
                                 <h2 className={style.title}>{slide.procedure}</h2>
-                                <p className={style.master}>Мастер: {slide.master}</p>
+                                <p className={style.master}>{text.masterLabel}: {slide.master}</p>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -93,4 +112,3 @@ export default function GalleryCarousel() {
         </div>
     );
 }
-

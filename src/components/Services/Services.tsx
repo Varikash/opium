@@ -9,10 +9,15 @@ import Nails from "@/components/Nails/Nails";
 import Hair from "@/components/Hair/Hair";
 import Treatment from "@/components/Treatment/Treatment";
 import { aboutText } from "@/constants/texts";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Services() {
     const [openAccordion, setOpenAccordion] = useState<number | null>(null);
     const accordionRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const { language } = useLanguage();
+
+    // Получаем тексты на текущем языке
+    const servicesText = aboutText[language].section.services;
 
     // Эффект для прокрутки к открытому аккордеону
     useEffect(() => {
@@ -38,11 +43,11 @@ export default function Services() {
 
     return (
         <section className={style.services}>
-            <h2 className={style.header}>{aboutText.ru.section.services.header}</h2>
+            <h2 className={style.header}>{servicesText.header}</h2>
 
             <div ref={(el) => { accordionRefs.current[0] = el; }}>
                 <Accordion
-                    title={aboutText.ru.section.services.accordion_1.title}
+                    title={servicesText.accordion_1.title}
                     isOpen={openAccordion === 0}
                     onToggle={() => handleToggle(0)}
                 >
@@ -52,7 +57,7 @@ export default function Services() {
 
             <div ref={(el) => { accordionRefs.current[1] = el; }}>
                 <Accordion
-                    title={aboutText.ru.section.services.accordion_2.title}
+                    title={servicesText.accordion_2.title}
                     isOpen={openAccordion === 1}
                     onToggle={() => handleToggle(1)}
                 >
@@ -62,7 +67,7 @@ export default function Services() {
 
             <div ref={(el) => { accordionRefs.current[2] = el; }}>
                 <Accordion
-                    title={aboutText.ru.section.services.accordion_3.title}
+                    title={servicesText.accordion_3.title}
                     isOpen={openAccordion === 2}
                     onToggle={() => handleToggle(2)}
                 >
@@ -72,7 +77,7 @@ export default function Services() {
 
             <div ref={(el) => { accordionRefs.current[3] = el; }}>
                 <Accordion
-                    title={aboutText.ru.section.services.accordion_4.title}
+                    title={servicesText.accordion_4.title}
                     isOpen={openAccordion === 3}
                     onToggle={() => handleToggle(3)}
                 >
@@ -82,7 +87,7 @@ export default function Services() {
 
             <div ref={(el) => { accordionRefs.current[4] = el; }}>
                 <Accordion
-                    title={aboutText.ru.section.services.accordion_5.title}
+                    title={servicesText.accordion_5.title}
                     isOpen={openAccordion === 4}
                     onToggle={() => handleToggle(4)}
                 >

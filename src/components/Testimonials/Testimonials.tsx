@@ -7,24 +7,79 @@ import { Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import type { NavigationOptions } from 'swiper/types';
 import Image from "next/image";
-
+import { useLanguage } from "@/context/LanguageContext";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-
-
-export default function Testimonials () {
-
+export default function Testimonials() {
     const prevBtnRef = useRef(null);
     const nextBtnRef = useRef(null);
+    const { language } = useLanguage();
+
+    // Тексты для разных языков
+    const testimonialTexts = {
+        ru: {
+            sectionName: "Отзывы",
+            title: "Ваша обратная связь помогает нам становиться",
+            highlight: "Лучше",
+            nextArrowAlt: "Далее",
+            testimonials: [
+                { name: "Мария", review: "Отличный салон! Очень довольна работой мастеров." },
+                { name: "Анна", review: "Профессиональный подход и внимание к деталям. Всегда отличный результат!" },
+                { name: "Елена", review: "Мастера в салоне работают на высшем уровне. Я в восторге от результата!" },
+                { name: "София", review: "Прекрасная атмосфера и качественный сервис. Обязательно вернусь снова!" },
+                { name: "Алина", review: "Очень понравилась работа стилиста. Получила именно то, что хотела." },
+                { name: "Ирина", review: "Регулярно посещаю этот салон и всегда довольна результатом." },
+                { name: "Екатерина", review: "Спасибо за профессионализм! Мой новый образ превзошел все ожидания." },
+                { name: "Юлия", review: "Лучший уход за волосами, который я когда-либо получала." },
+                { name: "Наталья", review: "Замечательные специалисты и прекрасное отношение к клиентам." },
+                { name: "Ольга", review: "Рекомендую всем! Здесь помогли решить мою проблему с волосами." }
+            ]
+        },
+        ro: {
+            sectionName: "Recenzii",
+            title: "Feedback-ul dvs. ne ajută să devenim",
+            highlight: "Mai buni",
+            nextArrowAlt: "Următorul",
+            testimonials: [
+                { name: "Maria", review: "Salon excelent! Sunt foarte mulțumită de munca specialiștilor." },
+                { name: "Ana", review: "Abordare profesională și atenție la detalii. Întotdeauna un rezultat excelent!" },
+                { name: "Elena", review: "Specialiștii din salon lucrează la cel mai înalt nivel. Sunt încântată de rezultat!" },
+                { name: "Sofia", review: "Atmosferă plăcută și servicii de calitate. Voi reveni cu siguranță!" },
+                { name: "Alina", review: "Mi-a plăcut foarte mult munca stilistului. Am primit exact ceea ce am dorit." },
+                { name: "Irina", review: "Vizitez regulat acest salon și sunt întotdeauna mulțumită de rezultat." },
+                { name: "Ecaterina", review: "Mulțumesc pentru profesionalism! Noul meu look a depășit toate așteptările." },
+                { name: "Iulia", review: "Cel mai bun tratament pentru păr pe care l-am primit vreodată." },
+                { name: "Natalia", review: "Specialiști minunați și atitudine excelentă față de clienți." },
+                { name: "Olga", review: "Recomand tuturor! M-au ajutat să-mi rezolv problema cu părul." }
+            ]
+        }
+    };
+
+    // Выбираем текст на основе текущего языка
+    const text = testimonialTexts[language];
+
+    // Изображения для слайдов
+    const slideImages = [
+        "/images/slide4.jpg",
+        "/images/slide1.jpg",
+        "/images/slide2.jpg",
+        "/images/slide3.jpg",
+        "/images/treatment.webp",
+        "/images/hair.jpg",
+        "/images/slide4.jpg",
+        "/images/slide2.jpg",
+        "/images/treatment.webp",
+        "/images/slide1.jpg"
+    ];
 
     return (
         <section className={style.main}>
             <div className={style.header}>
-                <span className={style.sectionName}>Отзывы</span>
-                <h2 className={style.title}>Ваша обратная связь помогает <br/> нам становиться <span className={style.decor}>Лучше</span></h2>
+                <span className={style.sectionName}>{text.sectionName}</span>
+                <h2 className={style.title}>{text.title} <br/> <span className={style.decor}>{text.highlight}</span></h2>
             </div>
             <div className={style.swiper}>
                 <div className={style.arrows}>
@@ -39,7 +94,7 @@ export default function Testimonials () {
                     <button ref={nextBtnRef} className={style.arrowNext}>
                         <Image
                             src="/images/arrow-right-testimonials.svg"
-                            alt="Далее"
+                            alt={text.nextArrowAlt}
                             width={30}
                             height={30}
                         />
@@ -67,218 +122,29 @@ export default function Testimonials () {
                         }}
                         className={style.mySwiper}
                     >
-                        {/* Примеры слайдов */}
-                        {/* Карточка 1 */}
-                        <SwiperSlide className={style.testimonialSlide}>
-                            <div
-                                className={style.testimonialCard}
-                                style={{ backgroundImage: 'url("/images/slide4.jpg")'}}
-                            >
-                                <div className={style.testimonialWrapper}></div>
-                                <div className={style.userInfo}>
-                                    <div className={style.avatar}>
-                                        <Image
-                                            src="/images/avatar1.jpg"
-                                            alt="Аватар Марии"
-                                            width={42}
-                                            height={42}
-                                        />
+                        {/* Динамическое создание слайдов на основе данных */}
+                        {text.testimonials.map((testimonial, index) => (
+                            <SwiperSlide key={index} className={style.testimonialSlide}>
+                                <div
+                                    className={style.testimonialCard}
+                                    style={{ backgroundImage: `url("${slideImages[index]}")` }}
+                                >
+                                    <div className={style.testimonialWrapper}></div>
+                                    <div className={style.userInfo}>
+                                        <div className={style.avatar}>
+                                            <Image
+                                                src={`/images/avatar${index + 1}.jpg`}
+                                                alt={`Аватар ${testimonial.name}`}
+                                                width={42}
+                                                height={42}
+                                            />
+                                        </div>
+                                        <h3 className={style.userName}>{testimonial.name}</h3>
                                     </div>
-                                    <h3 className={style.userName}>Мария</h3>
+                                    <p className={style.review}>{testimonial.review}</p>
                                 </div>
-                                <p className={style.review}>Отличный салон! Очень довольна работой мастеров.</p>
-                            </div>
-                        </SwiperSlide>
-
-                        {/* Карточка 2 */}
-                        <SwiperSlide className={style.testimonialSlide}>
-                            <div
-                                className={style.testimonialCard}
-                                style={{ backgroundImage: 'url("/images/slide1.jpg")'}}
-                            >
-                                <div className={style.userInfo}>
-                                    <div className={style.avatar}>
-                                        <Image
-                                            src="/images/avatar2.jpg"
-                                            alt="Аватар Анны"
-                                            width={42}
-                                            height={42}
-                                        />
-                                    </div>
-                                    <h3 className={style.userName}>Анна</h3>
-                                </div>
-                                <p className={style.review}>Профессиональный подход и внимание к деталям. Всегда отличный результат!</p>
-                            </div>
-                        </SwiperSlide>
-
-                        {/* Карточка 3 */}
-                        <SwiperSlide className={style.testimonialSlide}>
-                            <div
-                                className={style.testimonialCard}
-                                style={{ backgroundImage: 'url("/images/slide2.jpg")'}}
-                            >
-                                <div className={style.userInfo}>
-                                    <div className={style.avatar}>
-                                        <Image
-                                            src="/images/avatar3.jpg"
-                                            alt="Аватар Елены"
-                                            width={42}
-                                            height={42}
-                                        />
-                                    </div>
-                                    <h3 className={style.userName}>Елена</h3>
-                                </div>
-                                <p className={style.review}>Мастера в салоне работают на высшем уровне. Я в восторге от результата!</p>
-                            </div>
-                        </SwiperSlide>
-
-                        {/* Карточка 4 */}
-                        <SwiperSlide className={style.testimonialSlide}>
-                            <div
-                                className={style.testimonialCard}
-                                style={{ backgroundImage: 'url("/images/slide3.jpg")'}}
-                            >
-                                <div className={style.userInfo}>
-                                    <div className={style.avatar}>
-                                        <Image
-                                            src="/images/avatar4.jpg"
-                                            alt="Аватар Софии"
-                                            width={42}
-                                            height={42}
-                                        />
-                                    </div>
-                                    <h3 className={style.userName}>София</h3>
-                                </div>
-                                <p className={style.review}>Прекрасная атмосфера и качественный сервис. Обязательно вернусь снова!</p>
-                            </div>
-                        </SwiperSlide>
-
-                        {/* Карточка 5 */}
-                        <SwiperSlide className={style.testimonialSlide}>
-                            <div
-                                className={style.testimonialCard}
-                                style={{ backgroundImage: 'url("/images/treatment.webp")'}}
-                            >
-                                <div className={style.userInfo}>
-                                    <div className={style.avatar}>
-                                        <Image
-                                            src="/images/avatar5.jpg"
-                                            alt="Аватар Алины"
-                                            width={42}
-                                            height={42}
-                                        />
-                                    </div>
-                                    <h3 className={style.userName}>Алина</h3>
-                                </div>
-                                <p className={style.review}>Очень понравилась работа стилиста. Получила именно то, что хотела.</p>
-                            </div>
-                        </SwiperSlide>
-
-                        {/* Карточка 6 */}
-                        <SwiperSlide className={style.testimonialSlide}>
-                            <div
-                                className={style.testimonialCard}
-                                style={{ backgroundImage: 'url("/images/hair.jpg")'}}
-                            >
-                                <div className={style.userInfo}>
-                                    <div className={style.avatar}>
-                                        <Image
-                                            src="/images/avatar6.jpg"
-                                            alt="Аватар Ирины"
-                                            width={42}
-                                            height={42}
-                                        />
-                                    </div>
-                                    <h3 className={style.userName}>Ирина</h3>
-                                </div>
-                                <p className={style.review}>Регулярно посещаю этот салон и всегда довольна результатом.</p>
-                            </div>
-                        </SwiperSlide>
-
-                        {/* Карточка 7 */}
-                        <SwiperSlide className={style.testimonialSlide}>
-                            <div
-                                className={style.testimonialCard}
-                                style={{ backgroundImage: 'url("/images/slide4.jpg")'}}
-                            >
-                                <div className={style.userInfo}>
-                                    <div className={style.avatar}>
-                                        <Image
-                                            src="/images/avatar7.jpg"
-                                            alt="Аватар Екатерины"
-                                            width={42}
-                                            height={42}
-                                        />
-                                    </div>
-                                    <h3 className={style.userName}>Екатерина</h3>
-                                </div>
-                                <p className={style.review}>Спасибо за профессионализм! Мой новый образ превзошел все ожидания.</p>
-                            </div>
-                        </SwiperSlide>
-
-                        {/* Карточка 8 */}
-                        <SwiperSlide className={style.testimonialSlide}>
-                            <div
-                                className={style.testimonialCard}
-                                style={{ backgroundImage: 'url("/images/slide2.jpg")'}}
-                            >
-                                <div className={style.userInfo}>
-                                    <div className={style.avatar}>
-                                        <Image
-                                            src="/images/avatar8.jpg"
-                                            alt="Аватар Юлии"
-                                            width={42}
-                                            height={42}
-                                        />
-                                    </div>
-                                    <h3 className={style.userName}>Юлия</h3>
-                                </div>
-                                <p className={style.review}>Лучший уход за волосами, который я когда-либо получала.</p>
-                            </div>
-                        </SwiperSlide>
-
-                        {/* Карточка 9 */}
-                        <SwiperSlide className={style.testimonialSlide}>
-                            <div
-                                className={style.testimonialCard}
-                                style={{ backgroundImage: 'url("/images/treatment.webp")'}}
-                            >
-                                <div className={style.userInfo}>
-                                    <div className={style.avatar}>
-                                        <Image
-                                            src="/images/avatar9.jpg"
-                                            alt="Аватар Натальи"
-                                            width={42}
-                                            height={42}
-                                        />
-                                    </div>
-                                    <h3 className={style.userName}>Наталья</h3>
-                                </div>
-                                <p className={style.review}>Замечательные специалисты и прекрасное отношение к клиентам.</p>
-                            </div>
-                        </SwiperSlide>
-
-                        {/* Карточка 10 */}
-                        <SwiperSlide className={style.testimonialSlide}>
-                            <div
-                                className={style.testimonialCard}
-                                style={{ backgroundImage: 'url("/images/slide1.jpg")'}}
-                            >
-                                <div className={style.userInfo}>
-                                    <div className={style.avatar}>
-                                        <Image
-                                            src="/images/avatar10.jpg"
-                                            alt="Аватар Ольги"
-                                            width={42}
-                                            height={42}
-                                        />
-                                    </div>
-                                    <h3 className={style.userName}>Ольга</h3>
-                                </div>
-                                <p className={style.review}>Рекомендую всем! Здесь помогли решить мою проблему с волосами.</p>
-                            </div>
-                        </SwiperSlide>
-                        {/* Добавьте остальные слайды по необходимости */}
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </div>
             </div>

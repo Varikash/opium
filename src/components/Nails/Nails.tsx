@@ -5,9 +5,13 @@ import style from './Nails.module.css';
 import Image from "next/image";
 import {aboutText} from "@/constants/texts";
 import ServiceLine from "@/components/ServiceLine/ServiceLine";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Nails() {
-    const services = aboutText.ru.section.services.accordion_3.services;
+    const { language } = useLanguage();
+
+
+    const services = aboutText[language].section.services.accordion_3.services;
 
     const servicesWithUUID = useMemo(() => {
         return services.map(service => ({
@@ -16,7 +20,7 @@ export default function Nails() {
                 ? crypto.randomUUID()
                 : Math.random().toString(36).substring(2, 10)
         }));
-    }, []);
+    }, [services]);
 
     return (
         <div className={style.container}>
@@ -28,8 +32,8 @@ export default function Nails() {
                     height={205}
                     className={style.image}
                 />
-                <p className={style.description}>{aboutText.ru.section.services.accordion_3.description}</p>
-                <p className={style.note}>Все цены указаны в леях.</p>
+                <p className={style.description}>{aboutText[language].section.services.accordion_3.description}</p>
+                <p className={style.note}>{aboutText[language].section.services.serviceText}</p>
             </div>
             <div className={style.price}>
                 {servicesWithUUID.map(service => (
