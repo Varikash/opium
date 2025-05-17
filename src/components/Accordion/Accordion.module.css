@@ -39,6 +39,7 @@
     font-size: 80px;
     font-weight: 250;
     line-height: 50px;
+    transition: font-family 0.3s ease, font-size 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
 }
 
 .titleOpened {
