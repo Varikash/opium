@@ -17,13 +17,18 @@ export default function Services() {
     // Эффект для прокрутки к открытому аккордеону
     useEffect(() => {
         if (openAccordion !== null && accordionRefs.current[openAccordion]) {
-            // Прокручиваем к открытому аккордеону
+            // Увеличиваем время задержки для корректной прокрутки
             setTimeout(() => {
-                accordionRefs.current[openAccordion]?.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }, 10);
+                const yOffset = -80; // Смещение в пикселях (подстройте под высоту вашего заголовка)
+                const element = accordionRefs.current[openAccordion];
+                if (element) {
+                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({
+                        top: y,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 300); // Увеличенная задержка для завершения анимации
         }
     }, [openAccordion]);
 
