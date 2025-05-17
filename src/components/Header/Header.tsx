@@ -61,6 +61,14 @@ export default function Header() {
         };
     }, []);
 
+    // Формируем классы в зависимости от языка
+    const titleClass = `${style.title} ${language === 'ro' ? style.titleRo : ''}`;
+    const titleFirstClass = `${style.titleFirst} ${language === 'ro' ? style.titleFirstRo : ''}`;
+    const titleDecoreClass = `${style.titleDecore} ${language === 'ro' ? style.titleDecoreRo : ''}`;
+    const subTitleDecoreClass = `${style.subTitleDecore} ${language === 'ro' ? style.subTitleDecoreRo : ''}`;
+    const titleSecondClass = `${style.titleSecond} ${language === 'ro' ? style.titleSecondRo : ''}`;
+    const subtitleSecondClass = `${style.subtitleSecond} ${language === 'ro' ? style.subtitleSecondRo : ''}`;
+
     return (
         <>
             <header className={style.header}>
@@ -94,13 +102,13 @@ export default function Header() {
                         <span></span>
                     </div>
                 </nav>
-                <h1 className={style.title}>
-                    <span className={style.titleFirst}>{text.your}</span>
-                    <span className={style.titleDecore}>
-                        <span className={style.subTitleDecore}>{text.dose}</span> {text.beauty}
+                <h1 className={titleClass}>
+                    <span className={titleFirstClass}>{text.your}</span>
+                    <span className={titleDecoreClass}>
+                        <span className={subTitleDecoreClass}>{text.dose}</span> {text.beauty}
                     </span>
-                    <span className={style.titleSecond}>
-                        {text.inHeart} <span className={style.subtitleSecond}>{text.city}</span>
+                    <span className={titleSecondClass}>
+                        {text.inHeart} <span className={subtitleSecondClass}>{text.city}</span>
                     </span>
                 </h1>
                 <div className={style.line}>
