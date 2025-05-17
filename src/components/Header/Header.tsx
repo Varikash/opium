@@ -3,9 +3,34 @@
 import React, { useRef, useState, useEffect } from "react";
 import style from './Header.module.css'
 import Image from "next/image";
-
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
+    // Получаем текущий язык из контекста
+    const { language } = useLanguage();
+
+    // Тексты для разных языков
+    const headerTexts = {
+        ru: {
+            sinceYear: "c 2017 года",
+            your: "Твоя",
+            dose: "Доза",
+            beauty: "Красоты",
+            inHeart: "в самом сердце",
+            city: "города"
+        },
+        ro: {
+            sinceYear: "din 2017",
+            your: "Doza ta",
+            dose: "de",
+            beauty: "Frumusețe",
+            inHeart: "în inima",
+            city: "orașului"
+        }
+    };
+
+    // Выбираем текст в зависимости от языка
+    const text = headerTexts[language];
 
     const buttonRef = useRef<HTMLDivElement>(null);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -23,9 +48,7 @@ export default function Header() {
         document.body.style.overflow = menuOpen ? "hidden" : "";
     }, [menuOpen]);
 
-
     useEffect(() => {
-
         const handleResize = () => {
             setIsSmallScreen(window.innerWidth <= 480);
         };
@@ -59,7 +82,7 @@ export default function Header() {
                         width={isSmallScreen ? 56 : 156}
                         height={isSmallScreen ? 81 : 90}
                     />
-                    <p className={`${style.headerText} ${menuOpen ? style.hidden : ''}`}>c 2017 года</p>
+                    <p className={`${style.headerText} ${menuOpen ? style.hidden : ''}`}>{text.sinceYear}</p>
                     <div
                         className={style.hamburger}
                         ref={buttonRef}
@@ -71,22 +94,24 @@ export default function Header() {
                         <span></span>
                     </div>
                 </nav>
-                    <h1 className={style.title}>
-                        <span className={style.titleFirst}>Твоя</span>
-                        <span className={style.titleDecore}><span className={style.subTitleDecore}>Доза</span> Красоты</span>
-                        <span className={style.titleSecond}>в самом сердце <span className={style.subtitleSecond}>города</span></span>
-                    </h1>
+                <h1 className={style.title}>
+                    <span className={style.titleFirst}>{text.your}</span>
+                    <span className={style.titleDecore}>
+                        <span className={style.subTitleDecore}>{text.dose}</span> {text.beauty}
+                    </span>
+                    <span className={style.titleSecond}>
+                        {text.inHeart} <span className={style.subtitleSecond}>{text.city}</span>
+                    </span>
+                </h1>
                 <div className={style.line}>
-                    <p className={`${style.lineText}`}>c 2017 года</p>
+                    <p className={`${style.lineText}`}>{text.sinceYear}</p>
                 </div>
                 {menuOpen && (
                     <div className={style.menu}>
-
+                        {/* Здесь будет содержимое меню */}
                     </div>
                 )}
             </header>
         </>
     );
 }
-
-
