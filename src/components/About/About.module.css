@@ -177,13 +177,18 @@
         position: static;
         order: 2;
         flex-direction: row;
-        max-width: 100%;
+        max-width: none;
+        width: 100%;
         column-gap: 50px;
     }
 
+
     .founderDetails {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        max-width: none;
     }
 
     .team {
