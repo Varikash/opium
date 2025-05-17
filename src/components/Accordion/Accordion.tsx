@@ -18,24 +18,26 @@ export default function Accordion({ title, children, isOpen, onToggle }: Accordi
     useEffect(() => {
         const updateContentHeight = () => {
             if (contentRef.current) {
-                const scrollHeight = contentRef.current.scrollHeight;
+                const scrollHeight = contentRef.current.scrollHeight + 50;
                 setContentHeight(scrollHeight);
             }
         };
 
-        // Обновляем высоту при изменении состояния isOpen
         if (isOpen) {
             updateContentHeight();
 
-            // Устанавливаем обработчик изменения размера для динамического контента
             window.addEventListener('resize', updateContentHeight);
+            const timer = requestAnimationFrame(updateContentHeight);
 
-            // Отложенное обновление для контента, который может рендериться с задержкой
-            const timer = setTimeout(updateContentHeight, 50);
+            const observer = new MutationObserver(updateContentHeight);
+            if (contentRef.current) {
+                observer.observe(contentRef.current, { childList: true, subtree: true });
+            }
 
             return () => {
                 window.removeEventListener('resize', updateContentHeight);
-                clearTimeout(timer);
+                cancelAnimationFrame(timer);
+                observer.disconnect();
             };
         }
     }, [isOpen, children]);
