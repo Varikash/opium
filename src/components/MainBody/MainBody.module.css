@@ -5,4 +5,28 @@
     padding-right: 40px;
     padding-bottom: 100px;
     box-sizing: border-box;
+    position: relative; /* Для позиционирования векторного изображения */
+}
+
+.backgroundVector {
+    position: absolute;
+    top: 600px; /* Настройте согласно вашим требованиям */
+    right: calc(-1 * (100vw - 100%) / 2 - 100px); /* Магическая формула для прижатия к краю экрана */
+    opacity: 0.5;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@media (max-width: 1400px) {
+    .backgroundVector img {
+        width: auto;
+        height: auto;
+        max-width: 900px; /* Контролируем максимальный размер для адаптивности */
+    }
+}
+
+@media (max-width: 1000px) {
+    .backgroundVector img {
+        max-width: 600px;
+    }
 }
