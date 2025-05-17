@@ -14,8 +14,12 @@ import "swiper/css/pagination";
 
 export default function Masters() {
 
-    // Флаг, отвечающий за отображение карусели для экранов с шириной <= 1256px
-    const [isMobile, setIsMobile] = useState(false);
+    // Флаг для определения мобильного размера экрана
+    const [isMobile, setIsMobile] = useState<boolean>(false);
+// Флаг для определения тач-устройства
+    const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false);
+// Индекс активной карточки
+    const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
 
     // Отслеживаем изменение ширины окна, чтобы переключаться на карусель при нужном размере
     useEffect(() => {
@@ -25,8 +29,33 @@ export default function Masters() {
 
         handleResize(); // Устанавливаем начальное значение
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+
+        // Проверка типа устройства (новый код)
+        const touchMatch = window.matchMedia('(pointer: coarse)');
+        setIsTouchDevice(touchMatch.matches);
+        const touchHandler = (e: MediaQueryListEvent): void => {
+            setIsTouchDevice(e.matches);
+        };
+        touchMatch.addEventListener('change', touchHandler);
+
+
+
+        // Очистка обоих слушателей событий
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            touchMatch.removeEventListener('change', touchHandler);
+        };
     }, []);
+
+
+    // Обработчики для кнопок с типизацией
+    const handleMoreButtonClick = (index: number): void => {
+        setActiveCardIndex(index);
+    };
+
+    const handleCloseButtonClick = (): void => {
+        setActiveCardIndex(null);
+    };
 
 
     // Собираем данные для мастеров в единый массив для удобства перебора
@@ -79,20 +108,39 @@ export default function Masters() {
                         loop={true}
                         className={style.swiper} // При желании можно добавить собственные стили для Swiper
                     >
-                        {mastersData.map((master, index) => (
+                        {mastersData.map((master, index: number) => (
                             <SwiperSlide key={index} className={style.cardSlide}>
                                 <div className={style.listItem}>
                                     <div className={style.card}>
-                                        <Image
-                                            src={master.image}
-                                            width={321}
-                                            height={460}
-                                            alt={master.alt}
-                                            className={style.image}
-                                        />
-                                        <div className={style.overlay}>
+                                        <div className={style.imageContainer}>
+                                            <Image
+                                                src={master.image}
+                                                width={321}
+                                                height={460}
+                                                alt={master.alt}
+                                                className={`${style.image} ${activeCardIndex === index ? style.imageHidden : ''}`}
+                                            />
+                                            {isTouchDevice && activeCardIndex !== index && (
+                                                <button
+                                                    className={style.moreButton}
+                                                    onClick={() => handleMoreButtonClick(index)}
+                                                    aria-label="Подробнее"
+                                                >
+                                                    <span className={style.moreButtonText}>Подробнее</span>
+                                                </button>
+                                            )}
+                                        </div>
+                                        <div className={`${style.overlay} ${activeCardIndex === index ? style.overlayVisible : ''}`}>
                                             <div className={style.line}></div>
                                             <p className={style.description}>{master.about}</p>
+                                            {activeCardIndex === index && (
+                                                <button
+                                                    className={style.closeButton}
+                                                    onClick={handleCloseButtonClick}
+                                                >
+                                                    Закрыть
+                                                </button>
+                                            )}
                                         </div>
                                     </div>
                                     <p className={style.cardTitle}>{master.name}</p>
