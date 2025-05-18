@@ -425,7 +425,7 @@
 @media screen and (max-width: 430px) {
     .titleFirstRo {
         left: 20% !important;
-        top: calc(170px + 0.99 * (100vh - 1000px)) !important
+        top: calc(170px + 0.15 * (100vh - 1000px)) !important
     }
 }
 
