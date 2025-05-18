@@ -99,7 +99,7 @@
 .titleFirstRo {
     position: absolute;
     left: 55%;
-    top: 6vh;
+    top: 31vh;
     font-size: 55px;
 }
 
@@ -120,7 +120,7 @@
     .titleFirstRo {
         left: 55% !important;
         font-size: 32px;
-        top: 15vh !important;
+        top: 27vh !important;
     }
 
     .titleDecoreRo {
@@ -132,7 +132,7 @@
     .titleFirstRo {
         left: 30% !important;
         font-size: 28px;
-        top: 12vh !important;
+        top: 28vh !important;
     }
 
     .titleSecondRo {
@@ -321,6 +321,30 @@
     }
 }
 
+@media screen and (min-width: 604px) and (max-width: 1022px) and (min-height: 600px) and (max-height: 1000px) {
+    .titleFirstRo {
+        top: 16vh !important;
+    }
+}
+
+@media screen and (min-width: 604px) and (max-width: 1022px) and (max-height: 600px) {
+    .titleFirstRo {
+        top: 20vh !important;
+    }
+}
+
+@media screen and (max-width: 603px) and (max-height: 1000px) {
+    .titleFirstRo {
+        top: 18vh !important;
+    }
+}
+
+@media screen and (max-width: 430px) and (max-height: 1000px) {
+    .titleFirstRo {
+        top: 18vh !important;
+    }
+}
+
 @media screen and (max-width: 1023px) and (max-height: 999px) and (min-height: 667px) {
     .titleFirst {
         top: calc(113px + 0.1506 * (100vh - 667px));
@@ -382,7 +406,13 @@
 @media screen and (max-width: 430px) {
     .titleFirstRo {
         left: 20% !important;
-        top: 10vh !important;
+        top: 28vh !important;
+    }
+}
+
+@media screen and (max-width: 430px) and (max-height: 1000px) {
+    .titleFirstRo {
+        top: 20vh !important;
     }
 }
 
