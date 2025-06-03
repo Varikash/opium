@@ -1,12 +1,12 @@
 'use client';
 
 import React, { useMemo } from 'react';
-import styles from './Depilation.module.css';
+import style from './Depilation.module.css';
 import Image from "next/image";
 import {aboutText} from "@/constants/texts";
 import ServiceLine from "@/components/ServiceLine/ServiceLine";
 import { useLanguage } from "@/context/LanguageContext";
-import style from "@/components/Makeup/Makeup.module.css";
+
 
 export default function Depilation() {
     const { language } = useLanguage();
