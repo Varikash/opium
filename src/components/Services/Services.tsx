@@ -7,6 +7,8 @@ import Makeup from "@/components/Makeup/Makeup";
 import Brows from "@/components/Brows/Brows";
 import Nails from "@/components/Nails/Nails";
 import Hair from "@/components/Hair/Hair";
+import Cosmetology from "@/components/Cosmetology/Cosmetology";
+import Depilation from "@/components/Depilation/Depilation";
 import Treatment from "@/components/Treatment/Treatment";
 import { aboutText } from "@/constants/texts";
 import { useLanguage } from "@/context/LanguageContext";
@@ -42,7 +44,7 @@ export default function Services() {
     };
 
     return (
-        <section className={style.services}>
+        <section className={style.services} id="services">
             <h2 className={style.header}>{servicesText.header}</h2>
 
             <div ref={(el) => { accordionRefs.current[0] = el; }}>
@@ -92,6 +94,26 @@ export default function Services() {
                     onToggle={() => handleToggle(4)}
                 >
                     <Treatment />
+                </Accordion>
+            </div>
+
+            <div ref={(el) => { accordionRefs.current[5] = el; }}>
+                <Accordion
+                    title={servicesText.accordion_6.title}
+                    isOpen={openAccordion === 5}
+                    onToggle={() => handleToggle(5)}
+                >
+                    <Cosmetology />
+                </Accordion>
+            </div>
+
+            <div ref={(el) => { accordionRefs.current[6] = el; }}>
+                <Accordion
+                    title={servicesText.accordion_7.title}
+                    isOpen={openAccordion === 6}
+                    onToggle={() => handleToggle(6)}
+                >
+                    <Depilation />
                 </Accordion>
             </div>
         </section>

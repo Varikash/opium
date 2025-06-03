@@ -2,14 +2,19 @@
     display: flex;
     align-items: center;
     font-family: var(--font-inter, sans-serif);
-    font-size: 40px;
+    font-size: 34px;
     font-weight: 200;
     margin-bottom: 6px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .serviceName {
+    white-space: normal;
     white-space: nowrap;
     padding-right: 10px;
+    flex-shrink: 0;
+    max-width: 45%;
 }
 
 .dots {
@@ -17,6 +22,7 @@
     overflow: hidden;
     position: relative;
     height: 1em; /* нужно, чтобы точки были на нужной вертикали */
+    min-width: 40px;
 }
 
 .dots::before {
@@ -34,6 +40,7 @@
 .servicePrice {
     white-space: nowrap;
     padding-left: 10px;
+    flex-shrink: 0;
 }
 
 

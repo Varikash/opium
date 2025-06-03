@@ -46,6 +46,9 @@ export const aboutText = {
                         { name: "Моделирование и коррекция", price: "150" },
                         { name: "Окрашивание Brow Henna", price: "350" },
                         { name: "Биофиксация + окрашивание", price: "550" },
+                        { name: "Коррекция и покраска бровей (Thuya Keratin & Argan oil)", price: "400" },
+                        { name: "Ламинирование бровей + окрашивание + ботокс эффект (INLei - ITALY)", price: "550" },
+                        { name: "Ламинирование ресниц + окрашивание + ботокс эффект (INLei - ITALY)", price: "550" },
                     ]
                 },
                 accordion_3: {
@@ -79,6 +82,7 @@ export const aboutText = {
                         { name: "Свадебная причёска", price: "1600/2200" },
                         { name: "Причёска пробная (50%)", price: "от 2200" },
                         { name: "Мужская стрижка", price: "300" },
+                        { name: "Balayage / Milaj", price: "2000 / 3500" },
                     ]
                 },
                 accordion_5: {
@@ -91,6 +95,42 @@ export const aboutText = {
                         { name: "Keune Vital Nutrition SPA Creambath", price: "100" },
                     ]
                 },
+                accordion_6: {
+                    title: 'Эстетическая косметология',
+                    description: 'Комплекс процедур по уходу за кожей лица и восстановлению её молодости: пилинги, массажи, аппаратные методики и чистки. Эффективные техники для омоложения, улучшения текстуры и тона кожи, а также борьбы с несовершенствами.',
+                    services: [
+                        { name: "BioRePeel AntiAge пилинг", price: "750" },
+                        { name: "Mesoeclat AntiAge пилинг", price: "1200" },
+                        { name: "Retiflash AntiAge пилинг", price: "1100" },
+                        { name: "Ferulac Valencia AntiAge пилинг", price: "900" },
+                        { name: "Melaspeel Джесснера пилинг", price: "950" },
+                        { name: "Azelac Anti ACNE пилинг", price: "700" },
+                        { name: "Glycopure GIGI пилинг", price: "750" },
+                        { name: "IQ Lifting Chiromassage (50 минут)", price: "600" },
+                        { name: "IQ Lifting Chiromassage (1.5 часа)", price: "800" },
+                        { name: "Neurosedative массаж лица (50 минут)", price: "700" },
+                        { name: "Limfatic массаж лица (30 минут)", price: "400" },
+                        { name: "CRIOLIFT AntiAge Lifting", price: "1450" },
+                        { name: "PLASMA Shower – регенерация кожи", price: "750" },
+                        { name: "PLASMA Skin – удаление рубцов, папиллом", price: "50–200" },
+                        { name: "HYDRA PEN – мезотерапия", price: "850" },
+                        { name: "HYDRA PEN – биоревитализация", price: "1250" },
+                        { name: "Ультразвуковая чистка лица GIGI", price: "600" },
+                        { name: "Комплексная чистка лица GIGI", price: "800" },
+                    ]
+                },
+                accordion_7: {
+                    title: 'Депиляция',
+                    description: 'Гладкая кожа без лишних волос — быстро, аккуратно и с заботой о чувствительной зоне. Проводим депиляцию воском и шугарингом на всех участках тела с соблюдением гигиены и комфортных условий.',
+                    services: [
+                        { name: "Зона бикини", price: "400" },
+                        { name: "Ноги полностью", price: "400" },
+                        { name: "Ноги до колен", price: "200" },
+                        { name: "Руки", price: "200" },
+                        { name: "Зона подмышки", price: "100" },
+                        { name: "Зона лица", price: "100–200" }
+                    ]
+                }
             },
             gallery: {
                 slide_one: {procedure: 'Уход за лицом', master: 'Алена'},
@@ -148,6 +188,9 @@ export const aboutText = {
                         { name: "Modelare și corecție", price: "150" },
                         { name: "Vopsire Brow Henna", price: "350" },
                         { name: "Biofixare + vopsire", price: "550" },
+                        { name: "Corecție și vopsire sprâncene (Thuya Keratin & Argan oil)", price: "400" },
+                        { name: "Laminare sprâncene + vopsire + efect botox (INLei - ITALY)", price: "550" },
+                        { name: "Laminare gene + vopsire + efect botox (INLei - ITALY)", price: "550" }
                     ]
                 },
                 accordion_3: {
@@ -181,6 +224,7 @@ export const aboutText = {
                         { name: "Coafură de mireasă", price: "1600/2200" },
                         { name: "Coafură de probă (50%)", price: "de la 375" },
                         { name: "Tunsoare bărbătească", price: "300" },
+                        { name: "Balayage / Milaj", price: "2000 / 3500" }
                     ]
                 },
                 accordion_5: {
@@ -191,6 +235,42 @@ export const aboutText = {
                         { name: "Keune Shining", price: "1000/1200" },
                         { name: "CHI Royal Treatment", price: "de la 1000" },
                         { name: "Keune Vital Nutrition SPA Creambath", price: "100" },
+                    ]
+                },
+                accordion_6: {
+                    title: 'Cosmetologie estetică',
+                    description: 'Gama completă de proceduri pentru îngrijirea pielii feței și redobândirea tinereții: peelinguri, masaje, tehnologii aparatologice și curățare profundă. Metode eficiente pentru întinerire, uniformizarea texturii și nuanței pielii, precum și pentru combaterea imperfecțiunilor.',
+                    services: [
+                        { name: "Peeling BioRePeel AntiAge", price: "750" },
+                        { name: "Peeling Mesoeclat AntiAge", price: "1200" },
+                        { name: "Peeling Retiflash AntiAge", price: "1100" },
+                        { name: "Peeling Ferulac Valencia AntiAge", price: "900" },
+                        { name: "Peeling Jessner Melaspeel", price: "950" },
+                        { name: "Peeling Azelac Anti ACNE", price: "700" },
+                        { name: "Peeling Glycopure GIGI", price: "750" },
+                        { name: "Chiromasaj IQ Lifting (50 min)", price: "600" },
+                        { name: "Chiromasaj IQ Lifting (1.5 ore)", price: "800" },
+                        { name: "Masaj neurosedativ facial (50 min)", price: "700" },
+                        { name: "Masaj limfatic facial (30 min)", price: "400" },
+                        { name: "CRIOLIFT AntiAge Lifting", price: "1450" },
+                        { name: "PLASMA Shower – regenerare pielii", price: "750" },
+                        { name: "PLASMA Skin – eliminare cicatrici, papiloame", price: "50–200" },
+                        { name: "HYDRA PEN – mezoterapie", price: "850" },
+                        { name: "HYDRA PEN – biorevitalizare", price: "1250" },
+                        { name: "Curățare facială cu ultrasunet GIGI", price: "600" },
+                        { name: "Curățare facială complexă GIGI", price: "800" },
+                    ]
+                },
+                accordion_7: {
+                    title: 'Depilare',
+                    description: 'Piele netedă, fără păr în exces — rapid, delicat și cu grijă pentru zonele sensibile. Realizăm epilare cu ceară și zahăr pe toate zonele corpului, cu respectarea normelor de igienă și confort maxim.',
+                    services: [
+                        { name: "Zona bikini", price: "400" },
+                        { name: "Picioare complet", price: "400" },
+                        { name: "Picioare până la genunchi", price: "200" },
+                        { name: "Mâini", price: "200" },
+                        { name: "Axile", price: "100" },
+                        { name: "Față", price: "100–200" }
                     ]
                 },
             },

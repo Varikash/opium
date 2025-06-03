@@ -114,7 +114,7 @@ export default function Masters() {
     ];
 
     return(
-        <section className={style.main}>
+        <section className={style.main} id="masters">
             <h2 className={style.header}>{mastersTextData.header}</h2>
             <p className={style.text}>
                 {text.teamText} <span className={style.decor}>{text.caring}</span> {text.experts}

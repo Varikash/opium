@@ -30,7 +30,7 @@ export default function About() {
     const text = aboutTexts[language];
 
     return (
-        <section className={style.main}>
+        <section id="about" className={style.main}>
             <div className={style.founder}>
                 <div className={style.founderPhoto}>
                     <Image

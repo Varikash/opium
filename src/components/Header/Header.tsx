@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import style from './Header.module.css'
 import Image from "next/image";
+import Menu from "@/components/Menu/Menu";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
@@ -42,6 +43,13 @@ export default function Header() {
         }
 
         setMenuOpen(prev => !prev);
+    }
+
+    const closeMenu = () => {
+        if (buttonRef.current instanceof HTMLDivElement) {
+            buttonRef.current.classList.toggle(style.active);
+        }
+        setMenuOpen(false);
     }
 
     useEffect(() => {
@@ -115,9 +123,7 @@ export default function Header() {
                     <p className={`${style.lineText}`}>{text.sinceYear}</p>
                 </div>
                 {menuOpen && (
-                    <div className={style.menu}>
-                        {/* Здесь будет содержимое меню */}
-                    </div>
+                    <Menu onClose={closeMenu} />
                 )}
             </header>
         </>

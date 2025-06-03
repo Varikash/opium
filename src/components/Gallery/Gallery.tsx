@@ -63,7 +63,7 @@ export default function GalleryCarousel() {
     ];
 
     return (
-        <div className={style.carouselWrapper}>
+        <div className={style.carouselWrapper} id="gallery">
             <div className={style.galleryOverlay}>
                 {text.galleryTitle}
             </div>

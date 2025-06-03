@@ -28,7 +28,7 @@ export default function Footer() {
     const text = footerText[language];
 
     return (
-        <section className={style.footer}>
+        <section className={style.footer} id="footer">
             {/* Добавляем перевод для "Ждём вас" */}
             <h1 className={style.title}>{text.waiting}</h1>
             <div className={style.container}>

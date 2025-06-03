@@ -1,0 +1,212 @@
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #8D0000;
+    z-index: 998;
+    padding: 190px 40px 120px 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+    background-image: url('/images/Mac.png');
+    background-repeat: no-repeat;
+    background-position: right 70%;
+}
+
+.scrollWrapper {
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 315px auto;
+    grid-column-gap: 430px;
+    padding-bottom: 40px;
+}
+
+.navList {
+    list-style: none;
+}
+
+.navList a {
+    font-family: var(--font-inter);
+    font-size: 70px;
+    color: #3B0000;
+    line-height: 90px;
+    font-weight: 200;
+    transition: 0.5s;
+}
+
+.navList a:hover {
+    color: #ffffff;
+}
+
+.separator {
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 1) 35%,
+            rgba(0, 0, 0, 0) 100%
+    );
+}
+
+.extras {
+    max-width: 50%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    row-gap: 40px;
+    column-gap: 340px;
+}
+
+.holder {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+}
+
+.langSwitch {
+    font-family: var(--font-inter);
+    font-size: 40px;
+    font-weight: 200;
+}
+
+.langSwitch span {
+    cursor: pointer;
+}
+
+.button {
+    color: #3B0000;
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-inter);
+    font-size: 40px;
+    color: #3B0000;
+    font-weight: 200;
+    transition: 0.5s;
+}
+
+.video {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.langSwitch span:hover, .social a:hover {
+    color: #ffffff;
+}
+
+.active {
+    color: #fff;
+}
+
+@media screen and (max-width: 1118px) {
+    .nav {
+        grid-column-gap: 300px;
+    }
+
+    .extras {
+        grid-column-gap: 215px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .nav {
+        grid-column-gap: 200px;
+    }
+
+    .extras {
+        grid-column-gap: 115px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .nav {
+        grid-column-gap: 100px;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .navList a {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .nav {
+        grid-column-gap: 50px;
+        grid-template-columns: auto auto;
+    }
+
+
+    .extras {
+        grid-template-columns: 1fr;
+    }
+
+    .holder {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .video {
+        grid-row: 2;
+    }
+
+    .langSwitch, .social {
+        font-size: 30px;
+    }
+
+    .holder {
+        row-gap: 40px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .extras {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%; /* Изменим максимальную ширину */
+        width: 100%; /* Полная ширина */
+    }
+
+    .langSwitch {
+        text-align: center;
+    }
+
+    .social {
+        text-align: center;
+    }
+
+    .video {
+        width: 100%;
+        max-width: 300px; /* Ограничиваем ширину */
+    }
+
+
+    .video iframe {
+        width: 100%; /* Делаем iframe адаптивным */
+        height: 200px; /* Уменьшаем высоту */
+    }
+
+}
