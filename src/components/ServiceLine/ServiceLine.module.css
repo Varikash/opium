@@ -1,6 +1,6 @@
 .serviceLine {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     font-family: var(--font-inter, sans-serif);
     font-size: 34px;
     font-weight: 200;
@@ -11,25 +11,25 @@
 
 .serviceName {
     white-space: normal;
-    white-space: nowrap;
     padding-right: 10px;
     flex-shrink: 0;
-    max-width: 45%;
+    max-width: 55%;
+    width: fit-content;
 }
 
 .dots {
     flex-grow: 1;
     overflow: hidden;
     position: relative;
-    height: 1em; /* нужно, чтобы точки были на нужной вертикали */
-
+    height: 1.2em;
+    align-self: flex-end/* Увеличиваем высоту контейнера до высоты строки текста */
 }
 
 .dots::before {
     content: "....................................................................................................................................................................................................";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 0.1em; /* Смещаем точки чуть выше от дна контейнера */
     white-space: nowrap;
     width: 100%;
     pointer-events: none;
@@ -38,26 +38,34 @@
 }
 
 .servicePrice {
+    align-self: end;
     white-space: nowrap;
     padding-left: 10px;
     flex-shrink: 0;
 }
 
-
 @media screen and (max-width: 1430px) {
     .serviceLine {
-        font-size: 33px
+        font-size: 33px;
     }
 }
 
 @media screen and (max-width: 1115px) {
     .serviceLine {
-        font-size: 20px
+        font-size: 20px;
+    }
+
+    .dots::before {
+        font-size: 16px;
     }
 }
 
 @media screen and (max-width: 503px) {
     .serviceLine {
-        font-size: 14px
+        font-size: 14px;
+    }
+
+    .dots::before {
+        font-size: 12px;
     }
 }
