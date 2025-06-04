@@ -16,6 +16,79 @@ interface Leaf {
     height: number;
 }
 
+// Утилитарные функции для работы с временным хранением
+const setWithExpiry = (key: string, value: any, ttl: number) => {
+    const now = new Date();
+    const item = {
+        value: value,
+        expiry: now.getTime() + ttl,
+    };
+    localStorage.setItem(key, JSON.stringify(item));
+};
+
+const getWithExpiry = (key: string) => {
+    const itemStr = localStorage.getItem(key);
+
+    if (!itemStr) {
+        return null;
+    }
+
+    try {
+        const item = JSON.parse(itemStr);
+        const now = new Date();
+
+        // Проверяем, не истек ли срок действия
+        if (now.getTime() > item.expiry) {
+            localStorage.removeItem(key);
+            return null;
+        }
+
+        return item.value;
+    } catch (error) {
+        // Если данные повреждены, удаляем их
+        localStorage.removeItem(key);
+        return null;
+    }
+};
+
+const leafBaseConfigs: Leaf[] = [
+    {
+        src: '/images/leaf_two.png',
+        delay: 0.5,
+        duration: 6,
+        xPercent: 0.15,
+        rotate: 45,
+        width: 145,
+        height: 111
+    },
+    {
+        src: '/images/leaf_one.png',
+        delay: 0,
+        duration: 5.5,
+        xPercent: -0.10,
+        rotate: 30,
+        width: 285,
+        height: 240
+    },
+    {
+        src: '/images/leaf_three.png',
+        delay: 2.7,
+        duration: 7,
+        xPercent: 0.1,
+        rotate: 60,
+        width: 232,
+        height: 145
+    },
+    {
+        src: '/images/leaf_four.png',
+        delay: 0.8,
+        duration: 7.5,
+        xPercent: -0.22,
+        rotate: 20,
+        width: 300,
+        height: 253
+    }
+];
 
 const LoaderTulip = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -23,61 +96,20 @@ const LoaderTulip = () => {
     const [showLeaves, setShowLeaves] = useState(false);
     const [leafPositions, setLeafPositions] = useState<Leaf[]>([]);
 
-    const leafBaseConfigs: Leaf[] = [
-        {
-            src: '/images/leaf_two.png',
-            delay: 0.5,
-            duration: 6,
-            xPercent: 0.15,
-            rotate: 45,
-            width: 145,
-            height: 111
-        },
-        {
-            src: '/images/leaf_one.png',
-            delay: 0,
-            duration: 5.5,
-            xPercent: -0.10,
-            rotate: 30,
-            width: 285,
-            height: 240
-        },
-        {
-            src: '/images/leaf_three.png',
-            delay: 2.7,
-            duration: 7,
-            xPercent: 0.1,
-            rotate: 60,
-            width: 232,
-            height: 145
-        },
-        {
-            src: '/images/leaf_four.png',
-            delay: 0.8,
-            duration: 7.5,
-            xPercent: -0.22,
-            rotate: 20,
-            width: 300,
-            height: 253
-        }
-    ];
-
     useEffect(() => {
-
-
-
         // Проверяем только на стороне клиента
         if (typeof window === 'undefined') return;
 
-        const wasShown = localStorage.getItem("wasShown") === "true";
+        // Проверяем, был ли показан загрузчик в течение последних 24 часов
+        const wasShown = getWithExpiry("wasShown");
 
         if (wasShown) {
             setIsLoading(false);
             return;
         }
 
+        // Запускаем загрузчик
         setIsLoading(true);
-        localStorage.setItem("wasShown", "true");
 
         if (typeof window !== 'undefined') {
             const calculatedLeaves = leafBaseConfigs.map(leaf => ({
@@ -90,7 +122,7 @@ const LoaderTulip = () => {
         const duration = 6000;
         const interval = 50;
         const steps = duration / interval;
-        const increment = 100/ steps;
+        const increment = 100 / steps;
 
         let currentProgress = 0;
         const timer = setInterval(() => {
@@ -102,7 +134,10 @@ const LoaderTulip = () => {
 
                 setTimeout(() => {
                     setIsLoading(false);
-                },600);
+                    // Сохраняем отметку о показе ТОЛЬКО после завершения загрузчика
+                    const oneDayInMs = 24 * 60 * 60 * 1000;
+                    setWithExpiry("wasShown", true, oneDayInMs);
+                }, 600);
             } else {
                 setProgress(Math.floor(currentProgress));
 
@@ -112,10 +147,8 @@ const LoaderTulip = () => {
             }
         }, interval);
 
-
         return () => clearInterval(timer);
     }, []);
-
 
     return (
 
