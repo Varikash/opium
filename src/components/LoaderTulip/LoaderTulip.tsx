@@ -44,8 +44,8 @@ const getWithExpiry = (key: string) => {
         }
 
         return item.value;
-    } catch (_) {
-        // Если данные повреждены, удаляем их
+    } catch (error) {
+        console.error(error);
         localStorage.removeItem(key);
         return null;
     }
