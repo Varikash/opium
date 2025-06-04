@@ -124,8 +124,10 @@ export default function Masters() {
                     modules={[Pagination]}
                     grabCursor={true}
                     allowTouchMove={true}
-                    spaceBetween={1}
+                    spaceBetween={10}
                     slidesPerView={'auto'}
+                    centeredSlides={true}
+                    initialSlide={0}
                     loop={true}
                     className={style.swiper}
                 >

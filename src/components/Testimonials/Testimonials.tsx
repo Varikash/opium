@@ -101,7 +101,9 @@ export default function Testimonials() {
                     <Swiper
                         modules={[Navigation]}
                         spaceBetween={10}
+                        centeredSlides={true}
                         slidesPerView={'auto'}
+                        initialSlide={0}
                         loop={true}
                         navigation={{
                             prevEl: prevBtnRef.current,
