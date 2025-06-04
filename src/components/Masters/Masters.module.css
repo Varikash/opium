@@ -200,22 +200,15 @@
     }
 
     .swiper {
-        width: calc(100% - 50px); /* смещаем контейнер */
-        transform: translateX(150px); /* сдвиг вправо, подберите значение */
+        width: 100vw;
         height: auto;
+        margin-left: calc(-50vw + 50%);
     }
 
     .cardSlide {
         width: 300px;
         transition: opacity 0.3s ease;
         display: flex;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .swiper {
-        width: 100%;
-        transform: translateX(10px);
     }
 }
 
@@ -232,7 +225,6 @@
     .decor {
         font-size: 58px;
     }
-
 }
 
 @media screen and (max-width: 380px) {
