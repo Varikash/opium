@@ -207,6 +207,16 @@
         margin-top: 20px;
     }
 
+    .swiper {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        padding: 0 0 100px 0;
+    }
+
+    .slider {
+        width: 100%;
+    }
+
     .testimonialCard {
         height: 480px;
     }

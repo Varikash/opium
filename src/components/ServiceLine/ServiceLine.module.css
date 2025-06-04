@@ -22,7 +22,7 @@
     overflow: hidden;
     position: relative;
     height: 1em; /* нужно, чтобы точки были на нужной вертикали */
-    min-width: 40px;
+
 }
 
 .dots::before {
