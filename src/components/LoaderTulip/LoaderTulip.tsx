@@ -17,7 +17,7 @@ interface Leaf {
 }
 
 // Утилитарные функции для работы с временным хранением
-const setWithExpiry = (key: string, value: any, ttl: number) => {
+const setWithExpiry = (key: string, value: unknown, ttl: number) => {
     const now = new Date();
     const item = {
         value: value,
