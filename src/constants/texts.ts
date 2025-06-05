@@ -133,11 +133,11 @@ export const aboutText = {
                 }
             },
             gallery: {
-                slide_one: {procedure: 'Уход за лицом', master: 'Алена'},
-                slide_two: {procedure: 'Маникюр', master: 'Мария'},
-                slide_three: {procedure: 'Макияж', master: 'Виктория'},
+                slide_one: {procedure: 'Уход за лицом', master: 'Анастасия'},
+                slide_two: {procedure: 'Маникюр', master: 'Елена'},
+                slide_three: {procedure: 'Макияж', master: 'Антонина'},
                 slide_four: {procedure: 'Уход за волосами', master: 'Антонина'},
-                slide_five: {procedure: 'Уход за волосами', master: 'Алла'}
+                slide_five: {procedure: 'Стрижка', master: 'Алла'}
             }
         }
     },
@@ -275,11 +275,11 @@ export const aboutText = {
                 },
             },
             gallery: {
-                slide_one: {procedure: 'Îngrijirea feței', master: 'Alena'},
-                slide_two: {procedure: 'Manichiură', master: 'Maria'},
-                slide_three: {procedure: 'Machiaj', master: 'Victoria'},
+                slide_one: {procedure: 'Îngrijirea feței', master: 'Anastasia'},
+                slide_two: {procedure: 'Manichiură', master: 'Elena'},
+                slide_three: {procedure: 'Machiaj', master: 'Antonina'},
                 slide_four: {procedure: 'Îngrijirea părului', master: 'Antonina'},
-                slide_five: {procedure: 'Îngrijirea părului', master: 'Alla'}
+                slide_five: {procedure: 'Tunsoare', master: 'Alla'}
             }
         }
     }

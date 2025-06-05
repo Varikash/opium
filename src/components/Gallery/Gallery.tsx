@@ -41,22 +41,22 @@ export default function GalleryCarousel() {
             master: aboutText[language].section.gallery.slide_one.master,
         },
         {
-            image: '/images/slide2.jpeg',
+            image: '/images/manicure.jpg',
             procedure: aboutText[language].section.gallery.slide_two.procedure,
             master: aboutText[language].section.gallery.slide_two.master,
         },
         {
-            image: '/images/slide3.jpg',
+            image: '/images/makeup.jpg',
             procedure: aboutText[language].section.gallery.slide_three.procedure,
             master: aboutText[language].section.gallery.slide_three.master,
         },
         {
-            image: '/images/slide4.jpg',
+            image: '/images/haircare.jpg',
             procedure: aboutText[language].section.gallery.slide_four.procedure,
             master: aboutText[language].section.gallery.slide_four.master,
         },
         {
-            image: '/images/slide2.jpg',
+            image: '/images/haircut.jpg',
             procedure: aboutText[language].section.gallery.slide_five.procedure,
             master: aboutText[language].section.gallery.slide_five.master,
         },
