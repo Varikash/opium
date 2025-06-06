@@ -105,6 +105,22 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
+@media screen and (max-width: 1180px) {
+    .slide2{
+        background-position: 86%;
+    }
+
+    .slide3{
+        background-position: 92%;
+    }
+
+    .slider5{
+        background-position: 65%;
+    }
+}
+
+
+
 
 @media (max-width: 700px) {
     .title{

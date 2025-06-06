@@ -97,7 +97,7 @@ export default function GalleryCarousel() {
                 {slides.map((slide, idx) => (
                     <SwiperSlide key={idx}>
                         <div
-                            className={style.slide}
+                            className={`${style.slide} ${style[`slide${idx + 1}`]}`}
                             style={{ backgroundImage: `url(${slide.image})` }}
                         >
                             <div className={style.slideInfo}>
