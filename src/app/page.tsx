@@ -1,5 +1,6 @@
 import React from "react";
 import { LanguageProvider } from "@/context/LanguageContext";
+import SeoHead from "@/components/SeoHead/SeoHead";
 import LoaderTulip from "@/components/LoaderTulip/LoaderTulip";
 import Header from "@/components/Header/Header";
 import MainBody from "@/components/MainBody/MainBody";
@@ -13,6 +14,7 @@ import Footer from "@/components/Footer/Footer";
 export default function Home() {
   return (
     <LanguageProvider>
+      <SeoHead />
       <LoaderTulip />
       <Header />
       <MainBody>

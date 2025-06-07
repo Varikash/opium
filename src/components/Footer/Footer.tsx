@@ -37,11 +37,11 @@ export default function Footer() {
                     <div className={style.contact}>
                         <div className={style.email}>
                             <span className={style.redTitle}>Email</span>
-                            <p className={style.textInfo}>opiumsupport@gmail.com</p>
+                            <p className={style.textInfo}>opiumbeautysalon@gmail.com</p>
                         </div>
                         <div className={style.phone}>
                             <span className={style.redTitle}>Phone</span>
-                            <p className={style.textInfo}>+373123456</p>
+                            <p className={style.textInfo}>+37368186644</p>
                         </div>
                         <div className={style.social}>
                             <span className={style.redTitle}>Social</span>

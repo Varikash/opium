@@ -87,7 +87,7 @@ export default function Menu({ onClose }: { onClose: () => void }) {
               <iframe
                 width="405"
                 height="262"
-                src="https://www.youtube.com/embed/AwoZ2DIDgqQ"
+                src="https://www.youtube.com/embed/W2hib_aKEmE"
                 title="Видео о салоне"
                 allowFullScreen
               />
