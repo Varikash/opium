@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://beauty-opium.md
+
+# Sitemaps
+Sitemap: https://beauty-opium.md/sitemap.xml
